@@ -1,54 +1,30 @@
-import os import os 
+import os
+import json
+import time
+import joblib
+import string
+import warnings
+import numpy as np
+import pandas as pd
+import altair as alt
+import streamlit as st
+import seaborn as sns
+import matplotlib.pyplot as plt
+import tensorflow as tf
+from keras.models import load_model
+from keras.preprocessing.sequence import pad_sequences
 
-import jsonimport json
+from collections import defaultdict
+from scipy.sparse import hstack, csr_matrix
+from sklearn.metrics import classification_report, confusion_matrix
+from gensim.models import Word2Vec, KeyedVectors
 
-import timeimport time
-
-import joblibimport joblib
-
-import stringimport string
-
-import warningsimport warnings
-
-import numpy as npimport numpy as np
-
-import pandas as pdimport pandas as pd
-
-import altair as altimport altair as alt
-
-import streamlit as stimport streamlit as st
-
-import seaborn as snsimport seaborn as sns
-
-import matplotlib.pyplot as pltimport matplotlib.pyplot as plt
-
-
-
-from collections import defaultdictfrom collections import defaultdict
-
-from scipy.sparse import hstack, csr_matrixfrom scipy.sparse import hstack, csr_matrix
-
-from sklearn.metrics import classification_report, confusion_matrixfrom sklearn.metrics import classification_report, confusion_matrix
-
-from tensorflow.keras.preprocessing.sequence import pad_sequencesfrom tensorflow.keras.preprocessing.sequence import pad_sequences
-
-from tensorflow.keras.models import load_modelfrom tensorflow.keras.models import load_model
-
-from gensim.models import Word2Vec, KeyedVectorsfrom gensim.models import Word2Vec, KeyedVectors
-
-
-
-warnings.filterwarnings("ignore")warnings.filterwarnings("ignore")
-
-st.set_page_config(st.set_page_config(
-
-    page_title="Reddit Slang Classifier",    page_title="Reddit Slang Classifier",
-
-    layout="wide",    layout="wide",
-
-    initial_sidebar_state="expanded"    initial_sidebar_state="expanded"
-
-))
+warnings.filterwarnings("ignore")
+st.set_page_config(
+    page_title="Reddit Slang Classifier",
+    layout="wide",
+    initial_sidebar_state="expanded"
+)
 
 
 

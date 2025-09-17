@@ -402,7 +402,7 @@ def prob_chart(probs, labels):
         y=alt.Y("class:N", sort="-x"),
         color=alt.Color("class:N", scale=alt.Scale(domain=labels, range=[color_for(c) for c in labels]), legend=None),
         tooltip=["class", alt.Tooltip("probability:Q", format=".3f")]
-    ).properties(height=250)
+    ).properties(height=230)
     st.altair_chart(chart, use_container_width=True)
 
 def performance_metrics():

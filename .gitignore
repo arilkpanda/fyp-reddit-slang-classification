@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environment
+venv/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+
+# Keep model files
+!tfidf_vectorizer.pkl
+!tokenizer.pkl
+!mlb.pkl
+!svm_v2.pkl
+!lgbm_v2.pkl
+!bilstm_ensemble.keras
+!ensemble_model.pkl
+!idf_dict.pkl
